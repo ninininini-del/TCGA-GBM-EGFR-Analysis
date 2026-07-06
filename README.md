@@ -155,7 +155,10 @@ p = 0.7804
 
 ## Figures
 
-(Add your four figures here.)
+<img width="1366" height="647" alt="Figure_3" src="https://github.com/user-attachments/assets/d8d5917f-6b1d-4c2f-a033-114f2cb74e6e" />
+<img width="818" height="638" alt="Figure_2" src="https://github.com/user-attachments/assets/62ee22ff-a4c4-48d4-8265-3124ac207f7e" />
+<img width="681" height="638" alt="Figure_1" src="https://github.com/user-attachments/assets/7d1d0680-2f06-47b6-a7bf-265a48e68c6e" />
+
 
 ---
 
