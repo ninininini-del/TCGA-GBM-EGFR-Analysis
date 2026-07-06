@@ -1,26 +1,35 @@
-# TCGA-GBM-EGFR-Analysis
+# 🧬 EGFR-Associated Transcriptomic Analysis in TCGA Glioblastoma
 
-End-to-end bioinformatics analysis of TCGA glioblastoma using RNA-seq, mutation, and clinical data in Python
+![Python](https://img.shields.io/badge/Python-3.14-blue)
+![Bioinformatics](https://img.shields.io/badge/Bioinformatics-TCGA-green)
+![RNA-seq](https://img.shields.io/badge/RNA--seq-Analysis-orange)
+![Status](https://img.shields.io/badge/Project-Completed-success)
 
+---
 
-# EGFR-Associated Transcriptomic Analysis in Glioblastoma (TCGA)
+## Project Overview
 
-## Overview
+This project investigates the transcriptomic and clinical impact of **EGFR mutations** in **Glioblastoma Multiforme (GBM)** using publicly available **TCGA** datasets.
 
-This project investigates the molecular consequences of **EGFR mutations in Glioblastoma (GBM)** using publicly available data from **The Cancer Genome Atlas (TCGA)**.
+The analysis integrates:
 
-RNA sequencing, mutation, and clinical datasets were integrated to identify transcriptomic alterations associated with EGFR mutations and to evaluate their biological and clinical relevance.
+- RNA sequencing (RNA-seq)
+- Somatic mutation data
+- Clinical information
+
+to identify genes and biological pathways associated with EGFR mutation status and evaluate whether EGFR mutations influence patient survival.
 
 ---
 
 ## Objectives
 
-- Compare EGFR-mutated and wild-type GBM tumors
-- Perform differential gene expression analysis
-- Apply multiple-testing correction (Benjamini–Hochberg FDR)
-- Visualize transcriptomic differences
-- Perform GO and KEGG pathway enrichment
-- Evaluate patient survival using Kaplan–Meier analysis
+- Match patients across RNA-seq, mutation and clinical datasets
+- Compare EGFR-mutated and EGFR wild-type tumors
+- Identify differentially expressed genes
+- Perform multiple testing correction (Benjamini–Hochberg FDR)
+- Explore transcriptomic variation
+- Identify enriched biological pathways
+- Evaluate overall survival
 
 ---
 
@@ -28,84 +37,63 @@ RNA sequencing, mutation, and clinical datasets were integrated to identify tran
 
 Source:
 
-The Cancer Genome Atlas (TCGA)
+**The Cancer Genome Atlas (TCGA)**
 
 Cancer type:
 
 Glioblastoma Multiforme (GBM)
 
-Data types:
+Data used:
 
-- RNA-seq
-- Somatic mutations
-- Clinical information
+- RNA sequencing
+- Mutation profiles
+- Clinical data
 
 ---
 
-## Software
+## Tools
 
-Python 3
-
-Libraries
-
-- pandas
-- numpy
-- scipy
-- matplotlib
-- scikit-learn
-- statsmodels
-- lifelines
-- gseapy
+- Python
+- Pandas
+- NumPy
+- SciPy
+- Statsmodels
+- Scikit-learn
+- Matplotlib
+- Lifelines
+- GSEApy
 
 ---
 
 ## Workflow
 
+```text
 TCGA Data
-
-↓
-
-Quality control
-
-↓
-
-Patient matching
-
-↓
-
-EGFR mutation stratification
-
-↓
-
-Differential expression
-
-↓
-
-Volcano plot
-
-↓
-
-Heatmap
-
-↓
-
-Principal Component Analysis
-
-↓
-
-GO enrichment
-
-↓
-
-KEGG enrichment
-
-↓
-
-Kaplan–Meier survival analysis
+      │
+      ▼
+Data Cleaning
+      │
+      ▼
+Patient Matching
+      │
+      ▼
+EGFR Mutation Stratification
+      │
+      ▼
+Differential Expression Analysis
+      │
+      ├── Volcano Plot
+      ├── Heatmap
+      ├── PCA
+      ├── GO Enrichment
+      ├── KEGG Enrichment
+      ▼
+Kaplan–Meier Survival Analysis
+```
 
 ---
 
-## Results
+## Main Results
 
 ### Cohort
 
@@ -113,11 +101,11 @@ Kaplan–Meier survival analysis
 - 45 EGFR-mutated
 - 96 EGFR wild-type
 
-### Differential expression
+### Differential Expression
 
-- 323 significant genes (FDR < 0.05)
+- 323 significant genes after FDR correction
 
-Top genes included:
+Top differentially expressed genes included:
 
 - EGFR
 - MASP1
@@ -125,40 +113,81 @@ Top genes included:
 - HOXB3
 - SOX9
 
-### GO enrichment
+### Functional Enrichment
 
-Major enriched biological processes included:
+Gene Ontology highlighted processes related to:
 
 - EGFR signaling
-- Fatty acid metabolism
 - Lipid metabolism
+- Fatty acid metabolism
 - Ketone body metabolism
 
-### KEGG
-
-Top pathways included:
+KEGG pathway analysis identified pathways including:
 
 - Gap Junction
 - Ferroptosis
-- Central Carbon Metabolism in Cancer
 - Fatty Acid Elongation
+- Central Carbon Metabolism in Cancer
 
-### Survival
+### Survival Analysis
 
-Kaplan–Meier analysis demonstrated **no significant difference** in overall survival between EGFR-mutated and wild-type patients.
+Kaplan–Meier survival analysis showed **no statistically significant difference** in overall survival between EGFR-mutated and wild-type patients.
 
-Log-rank test
-
-p = 0.7804
+**Log-rank p-value = 0.7804**
 
 ---
 
-## Figures
+## Repository Structure
 
-<img width="1366" height="647" alt="Figure_3" src="https://github.com/user-attachments/assets/d8d5917f-6b1d-4c2f-a033-114f2cb74e6e" />
-<img width="818" height="638" alt="Figure_2" src="https://github.com/user-attachments/assets/62ee22ff-a4c4-48d4-8265-3124ac207f7e" />
-<img width="681" height="638" alt="Figure_1" src="https://github.com/user-attachments/assets/7d1d0680-2f06-47b6-a7bf-265a48e68c6e" />
+```text
+scripts/
+│
+├── Data loading
+├── Patient matching
+├── Differential expression
+├── Volcano plot
+├── Heatmap
+├── PCA
+├── GO enrichment
+├── KEGG enrichment
+└── Kaplan–Meier survival analysis
 
+results/
+│
+├── Differential expression tables
+├── GO enrichment results
+└── KEGG enrichment results
+
+figures/
+│
+├── Volcano plot
+├── Heatmap
+├── PCA
+└── Kaplan–Meier survival curve
+```
+
+---
+
+## Skills Demonstrated
+
+- Bioinformatics
+- RNA-seq analysis
+- Cancer genomics
+- Statistical hypothesis testing
+- Multiple testing correction
+- Gene set enrichment analysis
+- Survival analysis
+- Data visualization
+- Python programming
+
+---
+
+## Future Improvements
+
+- Integrate copy number variation (CNV) data
+- Machine learning classification of EGFR status
+- Multi-gene survival models
+- External validation on independent cohorts
 
 ---
 
@@ -166,4 +195,4 @@ p = 0.7804
 
 Ines Kellou
 
-Interested in Bioinformatics, Cancer Genomics and Computational Biology.
+Interested in Bioinformatics • Cancer Genomics • Computational Biology
