@@ -161,8 +161,6 @@ p = 0.7804
 
 ## Author
 
-Nini Lovebooks
-
-Biomedical Sciences Student
+Ines Kellou
 
 Interested in Bioinformatics, Cancer Genomics and Computational Biology.
